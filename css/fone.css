@@ -109,17 +109,28 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 								box-shadow: 0px 0px 15px 10px #ff00003c;
 								color: #000000;
 								
-								
-									text-shadow: 
-									0 0 1px #FF0010, 
-									0 0 1px #FF000D, 
-									0 0 4px #FF0009, 
-									0 0 10px #FF0000;
+								text-shadow: 
+									0 0 1px #ff0000,
+									0 0 1px #ff0000,    
+									0 0 10px #ff0000,
+									0 0 5px #ff0000;
 							}
 
-							.bd31 h1 {
+							.bd31 a {
 								font-family: "Protest Revolution", serif;
-								font-size: 50px;
+								font-size: 80px;
+							}
+
+							.bd31 {
+								display:flex;
+								justify-content: space-evenly;
+								
+							}
+
+						
+
+							.bd33 {
+								margin: 0px 40% 0px 0px;
 							}
 
 							.f00001 {
