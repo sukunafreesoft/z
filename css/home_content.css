@@ -35,3 +35,39 @@
             margin-top: 20px;
             margin-bottom: 20px;
             }
+
+            .container-buttons-1 {
+                display: flex;
+                justify-content: space-between;
+                margin-left: 13px;
+              }
+
+              .container-buttons-2 {
+                display: flex;
+                justify-content: space-between; 
+                margin-left: 13px;
+              }
+
+              .container-buttons-3 {
+                display: flex;
+                justify-content: space-between; 
+                margin-right: 630px;
+                margin-left: 13px;
+              }
+
+              .container-buttons-4 {
+                display: flex;
+                justify-content: space-between; 
+                margin-left: 13px;
+              }
+
+              .container-buttons-5 {
+                display: flex;
+                justify-content: space-between; 
+                margin-left: 13px;
+              }
+
+              .container-inf-1 {
+             padding-left: 13px;
+             padding-right: 13px;
+              }
