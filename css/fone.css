@@ -123,7 +123,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
 							.bd31 {
 								display:flex;
-								justify-content: space-around;
+								justify-content:space-around;
 								
 							}
 
