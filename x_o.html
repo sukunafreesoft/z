@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Крестики-нолики</title>
+    <link rel="stylesheet" href="css/styles_game.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+    <!-- Эффект снега -->
+    <div id="snow-container"></div>
+
+    <div class="container">
+        <h1>Крестики-нолики</h1>
+        <div id="scores">
+            <span id="player-score">Твои очки: 0</span>
+            <br>
+            <span id="bot-score">Очки Сукуны: 0</span>
+        </div>
+        <div id="game-status">Ну шо играем?</div>
+        <div class="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <button id="reset-btn">Заново</button>
+        <button id="reset-all-btn">Сбросить очки</button>
+    </div>
+    <script src="js/game.js"></script>
+    
+</body>
+</html>

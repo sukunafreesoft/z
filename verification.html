@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выполни задания</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+
+        /* Эффект снега */
+#snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    width: 5px;
+    height: 7px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+        header {
+            background-color: #690000;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .task {
+            background-color: #333;
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .task button {
+            background-color: #690000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .task button:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+
+        .task button:hover:not(:disabled) {
+            background-color: #900;
+        }
+
+        .timer {
+            font-size: 18px;
+            color: #bbb;
+            margin-top: 20px;
+        }
+
+        .download button {
+            background-color: #690000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .download button:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+
+        .download button:hover:not(:disabled) {
+            background-color: #900;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            margin-top: 20px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <!-- Элемент для снега -->
+    <div id="snow-container"></div>
+
+    <header>
+        ! Выполни задания
+    </header>
+
+    <div class="container">
+        <h2>Для того что-бы скачать файл необходимо выполнить задания:</h2>
+
+        <div class="task">
+            <button id="task-tiktok" onclick="completeTask('tiktok', 'https://www.tiktok.com/@sukunafreesoft?')">Подписаться на TikTok</button>
+        </div>
+
+        <div class="task">
+            <button id="task-youtube" onclick="completeTask('youtube', 'https://youtube.com/@ssukunaa228?si=Lm551P_Gm3VIZijZ')">Подписаться на YouTube</button>
+        </div>
+
+        <div class="task">
+            <button id="task-telegram" onclick="completeTask('telegram', 'https://t.me/sukunafreesoft')">Подписаться на Telegram</button>
+        </div>
+
+        <div class="timer" id="timer" style="display: none;">Таймер 10 секунд...</div>
+
+        <div class="download">
+            <button id="download-button" disabled>Скачать</button>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Sukuna Software. All rights reserved.
+    </footer>
+    
+
+    <script>
+        // Эффект снега
+        const snowContainer = document.getElementById('snow-container');
+
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.animationDelay = Math.random() * 5 + 's';
+            snowContainer.appendChild(snowflake);
+        }
+
+        for (let i = 0; i < 50; i++) {
+            createSnowflake();
+        }
+
+        // Получение целевой ссылки из URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetUrl = urlParams.get('url'); // Целевая ссылка
+
+        // Проверяем, есть ли переданная ссылка
+        if (!targetUrl) {
+            alert("Ошибка: целевая ссылка не найдена!");
+        }
+
+        const taskStatus = {
+            tiktok: false,
+            youtube: false,
+            telegram: false
+        };
+
+        function completeTask(task, url) {
+            window.open(url, "_blank");
+            const button = document.getElementById(`task-${task}`);
+            button.innerText = "Подождите...";
+            button.disabled = true;
+
+            // Задержка перед сменой текста на "Выполнено!"
+            setTimeout(() => {
+                button.innerText = "Выполнено!";
+                taskStatus[task] = true; // Отмечаем задачу как выполненную
+                checkAllTasks(); // Проверяем, выполнены ли все задания
+            }, 10000); // 10 секунд задержки
+        }
+
+        function checkAllTasks() {
+            const allCompleted = Object.values(taskStatus).every(status => status);
+            const timerElement = document.getElementById("timer");
+            const downloadButton = document.getElementById("download-button");
+
+            if (allCompleted) {
+                timerElement.style.display = "block";
+                timerElement.innerText = "Подождите...";
+
+                setTimeout(() => {
+                    timerElement.innerText = "Доступ открыт!";
+                    downloadButton.disabled = false; // Разблокируем кнопку
+                    downloadButton.onclick = () => {
+                        window.location.href = targetUrl; // Перенаправляем на целевую ссылку
+                    };
+                    downloadButton.innerText = "Скачать";
+                }, 10000); // 10 секунд ожидания
+            }
+        }
+    </script>
+    
+</body>
+</html>

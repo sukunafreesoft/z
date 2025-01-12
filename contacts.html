@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | SUKUNA</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 20px 0;
+            color: #ff0000;
+            text-align: center;
+        }
+        .line {
+            height: 2px;
+            width: 60%;
+            margin: 10px auto;
+            background: #ffffff;
+        }
+        .contacts {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .contacts div {
+            margin: 10px 0;
+        }
+        .contacts a {
+            color: #ff0000;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+        .contacts a:hover {
+            color: #fff;
+        }
+        .form-container {
+            margin-top: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-container form {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: #333;
+            color: #fff;
+            border: 1px solid #555;
+            border-radius: 4px;
+        }
+        .form-container input:focus, .form-container textarea:focus {
+            border: 1px solid #e94545;
+            outline: none;
+        }
+        .form-container button {
+            width: 100%;
+            background: #660000;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.3s ease-in-out;
+        }
+        .form-container button:hover {
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Заполни форму</h1>
+        <div class="line"></div>
+    </header>
+    <main class="container">
+        <div class="form-container">
+            <form action="https://server-form.onrender.com/send_message" method="POST">
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="text" name="telegram" placeholder="Ваш Telegram" required>
+                <textarea name="message" placeholder="Ваше сообщение" required></textarea>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
