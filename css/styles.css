@@ -1,0 +1,272 @@
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Эффект снега */
+#snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    width: 5px;
+    height: 7px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+/* Заголовок (Header) */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #330000;
+    padding: 3px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+}
+
+/* Логотип */
+.header .logo {
+    font-size: 40px;
+    font-family: 'Protest Revolution', sans-serif; /* Убедись, что шрифт доступен */
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000;
+    animation: glow 1.5s infinite alternate, scalePulse 2s infinite ease-in-out;
+}
+
+/* Анимация свечения */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000;
+    }
+    100% {
+        text-shadow: 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000, 0 0 25px #ff4d4d;
+    }
+}
+
+/* Анимация масштабирования и пульсации */
+@keyframes scalePulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav a:hover {
+    color: #ff4444;
+    transform: scale(1.1);
+}
+
+/* Главный контент (Main) */
+.main {
+    padding: 20px;
+    text-align: center;
+}
+
+.hero {
+    background: linear-gradient(90deg, #330000, #660000);
+    padding: 40px 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #ddd;
+}
+
+/* Секция загрузок (Downloads) */
+.downloads {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.downloads h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #ff0000;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.download-item {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #1f1f1f;
+    border: 1px solid #660000;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.download-item:hover {
+    transform: translateY(-5px);
+}
+
+.download-item h3 {
+    font-size: 24px;
+    color: #ff0000;
+    margin-bottom: 5px;
+}
+
+.download-item p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #ccc;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.download-item .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #660000;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.download-item .btn:hover {
+    background-color: #ff0000;
+    transform: scale(1.1);
+}
+
+/* Всплывающее окно (Modal) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1002;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #ff0000;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #fff;
+}
+
+/* Футер (Footer) */
+.footer {
+    background-color: #330000;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    border-top: 3px solid #660000;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ff0000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #bbb;
+}
