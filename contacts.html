@@ -29,6 +29,26 @@
             margin: 10px auto;
             background: #ffffff;
         }
+        .contacts {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .contacts div {
+            margin: 10px 0;
+        }
+        .contacts a {
+            color: #ff0000;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+        .contacts a:hover {
+            color: #fff;
+        }
         .form-container {
             margin-top: 40px;
             max-width: 600px;
@@ -76,7 +96,7 @@
     </header>
     <main class="container">
         <div class="form-container">
-            <form action="https://server-form.onrender.com/send_message" method="POST" id="contact-form">
+            <form action="https://server-form.onrender.com/send_message" method="POST">
                 <input type="text" name="name" placeholder="Ваше имя" required>
                 <input type="text" name="telegram" placeholder="Ваш Telegram" required>
                 <textarea name="message" placeholder="Ваше сообщение" required></textarea>
@@ -84,23 +104,5 @@
             </form>
         </div>
     </main>
-    <script>
-        const form = document.getElementById('contact-form');
-        form.addEventListener('submit', (event) => {
-            event.preventDefault(); // Предотвращаем стандартное поведение формы
-            fetch(form.action, {
-                method: form.method,
-                body: new FormData(form),
-            })
-            .then(response => response.text())
-            .then(data => {
-                alert("Сообщение отправлено!");
-                form.reset(); // Очищаем форму
-            })
-            .catch(error => {
-                alert("Ошибка отправки сообщения.");
-            });
-        });
-    </script>
 </body>
 </html>
