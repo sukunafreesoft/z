@@ -58,12 +58,9 @@
         }
 
         .task {
-            background-color: #333;
             margin: 20px auto;
-            padding: 20px;
+            padding: 0px;
             width: 80%;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         .task button {
@@ -113,13 +110,40 @@
             background-color: #900;
         }
 
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #333;
-            margin-top: 20px;
-            color: #ccc;
-        }
+      /* Футер (Footer) */
+.footer {
+    background-color: #330000;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    border-top: 3px solid #660000;
+    margin: 10px 10px 0px 10px;
+    border-radius: 8px;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ff0000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #bbb;
+}
+
     </style>
 </head>
 <body>
@@ -127,22 +151,22 @@
     <div id="snow-container"></div>
 
     <header>
-        ! Выполни задания
+        Выполни задания !!!
     </header>
 
     <div class="container">
         <h2>Для того что-бы скачать файл необходимо выполнить задания:</h2>
 
         <div class="task">
-            <button id="task-tiktok" onclick="completeTask('tiktok', 'https://www.tiktok.com/@sukunafreesoft?')">Подписаться на TikTok</button>
+            <button id="task-tiktok" onclick="completeTask('tiktok', 'https://www.tiktok.com/@sukunafreesoft?')">Subscribe to TikTok</button>
         </div>
 
         <div class="task">
-            <button id="task-youtube" onclick="completeTask('youtube', 'https://youtube.com/@ssukunaa228?si=Lm551P_Gm3VIZijZ')">Подписаться на YouTube</button>
+            <button id="task-youtube" onclick="completeTask('youtube', 'https://youtube.com/@ssukunaa228?si=Lm551P_Gm3VIZijZ')">Subscribe to YouTube</button>
         </div>
 
         <div class="task">
-            <button id="task-telegram" onclick="completeTask('telegram', 'https://t.me/sukunafreesoft')">Подписаться на Telegram</button>
+            <button id="task-telegram" onclick="completeTask('telegram', 'https://t.me/sukunafreesoft')">Subscribe to Telegram</button>
         </div>
 
         <div class="timer" id="timer" style="display: none;">Таймер 10 секунд...</div>
@@ -152,8 +176,20 @@
         </div>
     </div>
 
-    <footer>
-        &copy; 2025 Sukuna Software. All rights reserved.
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://t.me/sukunafreesoft" target="_blank">Telegram Channel</a>
+            <a href="https://t.me/sukunasoft" target="_blank">Telegram Chat</a>
+            <a href="https://www.tiktok.com/@sukunafreesoft" target="_blank">TikTok</a>
+            <a href="https://youtube.com/@ssukunaa228?si=Sax0yMr_StT8erZs" target="_blank">YouTube</a>
+            <a href="https://t.me/darkseyebot" target="_blank">OSiNT Bot</a>
+            <a href="https://www.donationalerts.com/r/ssukunaa228" target="_blank">Donate</a>   
+            <br>
+            <p style="font-size: 15px;color: rgb(255, 255, 255);">Mini Games</p>
+            <a href="x_o.html" target="_blank">Крестики-нолики</a>
+        </div>
+        <p>&copy; 2025 Sukuna Software. All rights reserved.</p>
     </footer>
     
 
@@ -213,7 +249,7 @@
                 timerElement.innerText = "Подождите...";
 
                 setTimeout(() => {
-                    timerElement.innerText = "Доступ открыт!";
+                    timerElement.innerText = "Ссылка разблокирована !!!";
                     downloadButton.disabled = false; // Разблокируем кнопку
                     downloadButton.onclick = () => {
                         window.location.href = targetUrl; // Перенаправляем на целевую ссылку

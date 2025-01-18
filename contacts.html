@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сообщение | SUKUNA</title>
+
+    <!-- Подключение шрифтов -->
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Cinzel:wght@400..900&family=Jaro:opsz@6..72&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Press+Start+2P&family=Protest+Revolution&family=Tiny5&display=swap" rel="stylesheet">
+
+
     <style>
         body {
             background-color: #1a1a1a;
@@ -12,6 +19,44 @@
             margin: 0;
             padding: 0;
         }
+
+        /* Заголовок (Header) */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #330000;
+    padding: 3px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    margin: 10px 10px 0px 10px;
+    border-radius: 8px;
+}
+
+/* Логотип */
+.header .logo {
+    font-size: 40px;
+    font-family: 'Protest Revolution', sans-serif; /* Убедись, что шрифт доступен */
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav a:hover {
+    color: #ff4444;
+    transform: scale(1.1);
+}
+
         .container {
             width: 80%;
             margin: 0 auto;
@@ -87,13 +132,53 @@
         .form-container button:hover {
             background: #ff0000;
         }
+
+        /* Футер (Footer) */
+.footer {
+    background-color: #330000;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    border-top: 3px solid #660000;
+    margin: 10px 10px 0px 10px;
+    border-radius: 8px;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ff0000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #bbb;
+}
     </style>
 </head>
 <body>
-    <header>
-        <h1>Отправить сообщение разработчику</h1>
-        <div class="line"></div>
+     <!-- Заголовок сайта -->
+     <header class="header">
+        <div class="logo animated-logo">SUKUNA</div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="index.html#downloads">Download Soft</a>
+        </nav>
     </header>
+    <h1>Feedback</h1>
     <main class="container">
         <div class="form-container">
             <form action="https://server-form.onrender.com/send_message" method="POST">
@@ -104,5 +189,20 @@
             </form>
         </div>
     </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://t.me/sukunafreesoft" target="_blank">Telegram Channel</a>
+            <a href="https://t.me/sukunasoft" target="_blank">Telegram Chat</a>
+            <a href="https://www.tiktok.com/@sukunafreesoft" target="_blank">TikTok</a>
+            <a href="https://youtube.com/@ssukunaa228?si=Sax0yMr_StT8erZs" target="_blank">YouTube</a>
+            <a href="https://t.me/darkseyebot" target="_blank">OSiNT Bot</a>
+            <a href="https://www.donationalerts.com/r/ssukunaa228" target="_blank">Donate</a>   
+            <br>
+            <p style="font-size: 15px;color: rgb(255, 255, 255);">Mini Games</p>
+            <a href="x_o.html" target="_blank">Крестики-нолики</a>
+        </div>
+        <p>&copy; 2025 Sukuna Software. All rights reserved.</p>
+    </footer>
 </body>
 </html>

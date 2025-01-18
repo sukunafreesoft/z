@@ -50,6 +50,8 @@ body {
     position: sticky;
     top: 0;
     z-index: 1001;
+    margin: 10px 10px 0px 10px;
+    border-radius: 8px;
 }
 
 /* Логотип */
@@ -220,6 +222,8 @@ body {
     text-align: center;
     margin-top: 20px;
     border-top: 3px solid #660000;
+    margin: 10px 10px 0px 10px;
+    border-radius: 8px;
 }
 
 .footer-links {
