@@ -3,13 +3,13 @@ backend:
   repo: sukunafreesoft/z  # Укажи имя твоего репозитория на GitHub
   branch: main  # или другая ветка, если используешь её
 
-media_folder: "/log-img"  # Папка для загрузки изображений
+media_folder: "/img"  # Папка для загрузки изображений
 public_folder: "/img"  # Путь для отображения изображений
 
 collections:
-  - name: "pages"
-    label: "Pages"
-    folder: "content/pages"  # Папка, где будут храниться твои страницы
+  - name: "/"
+    label: "/"
+    folder: "/"  # Папка, где будут храниться твои страницы
     create: true
     slug: "{{slug}}"  # Будет использоваться как имя файла
     fields:
