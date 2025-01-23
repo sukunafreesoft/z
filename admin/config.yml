@@ -10,61 +10,53 @@ collections:
   # Коллекция для HTML-страниц
   - name: "html_pages"
     label: "HTML Pages"
-    folder: "/"  # Корневая папка, где хранятся HTML-файлы
-    create: true  # Возможность создавать новые файлы
-    format: "frontmatter"  # Использовать YAML frontmatter
+    folder: "pages"  # Указываем конкретную папку для HTML
+    create: true
     extension: "html"  # Расширение файлов
     fields:
-      - { name: "title", label: "Title", widget: "string" }  # Заголовок страницы
-      - { name: "body", label: "HTML Content", widget: "code", default_language: "html" }  # Основной HTML-код
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "body", label: "HTML Content", widget: "code", default_language: "html" }
 
   # Коллекция для CSS-стилей
   - name: "styles"
     label: "CSS Styles"
-    folder: "css"  # Папка со стилями
+    folder: "css"
     create: true
-    format: "frontmatter"
     extension: "css"
     fields:
-      - { name: "body", label: "CSS Content", widget: "code", default_language: "css" }  # Основной код стилей
+      - { name: "body", label: "CSS Content", widget: "code", default_language: "css" }
 
   # Коллекция для JavaScript
   - name: "scripts"
     label: "JavaScript Files"
-    folder: "js"  # Папка со скриптами
+    folder: "js"
     create: true
-    format: "frontmatter"
     extension: "js"
     fields:
-      - { name: "body", label: "JavaScript Content", widget: "code", default_language: "javascript" }  # Основной код JS
+      - { name: "body", label: "JavaScript Content", widget: "code", default_language: "javascript" }
 
   # Коллекция для изображений
   - name: "images"
     label: "Images"
-    folder: "img"  # Папка с изображениями
+    folder: "img"
     create: true
-    media_folder: "img"
-    public_folder: "/img"
     fields:
-      - { name: "image", label: "Image", widget: "image" }  # Выбор изображения
-      - { name: "alt", label: "Alt Text", widget: "string" }  # Описание изображения
+      - { name: "image", label: "Image", widget: "image" }
 
-  # Коллекция для звуков (если они используются)
+  # Коллекция для звуков
   - name: "sounds"
     label: "Sounds"
-    folder: "sounds"  # Папка со звуками
+    folder: "sounds"
     create: true
     fields:
-      - { name: "file", label: "Sound File", widget: "file" }  # Выбор файла
-      - { name: "description", label: "Description", widget: "text" }  # Описание звука
+      - { name: "file", label: "Sound File", widget: "file" }
+      - { name: "description", label: "Description", widget: "text" }
 
-  # Коллекция для дополнительных файлов (например, в папке log-img)
+  # Коллекция для логотипов или дополнительных изображений
   - name: "log_images"
     label: "Log Images"
-    folder: "log-img"  # Папка с логотипами или изображениями
+    folder: "log-img"
     create: true
-    media_folder: "log-img"
-    public_folder: "/log-img"
     fields:
       - { name: "image", label: "Image", widget: "image" }
       - { name: "alt", label: "Alt Text", widget: "string" }
