@@ -134,12 +134,16 @@ title: Home
             document.getElementById(id).style.display = 'none';
         }
     
-        document.addEventListener("DOMContentLoaded", () => {
-  const frontmatter = document.querySelectorAll('body > :first-child');
-  if (frontmatter.length > 0 && frontmatter[0].textContent.includes('---')) {
-    frontmatter[0].remove();
+      document.addEventListener("DOMContentLoaded", () => {
+  console.log("Скрипт работает!");
+  const frontmatter = document.querySelector('body > :first-child');
+  console.log(frontmatter); // Проверьте, что здесь находится нужный элемент
+  if (frontmatter && frontmatter.textContent.includes('---')) {
+    frontmatter.remove();
+    console.log("Фронтматтер удалён!");
   }
 });
+
     </script>
 </body>
 </html>
