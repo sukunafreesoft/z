@@ -1,5 +1,5 @@
 ---
-title: Home
+title: " "
 ---
 
 <!DOCTYPE html>
@@ -133,17 +133,6 @@ title: Home
         function closeInfo(id) {
             document.getElementById(id).style.display = 'none';
         }
-    
-      document.addEventListener("DOMContentLoaded", () => {
-  console.log("Скрипт работает!");
-  const frontmatter = document.querySelector('body > :first-child');
-  console.log(frontmatter); // Проверьте, что здесь находится нужный элемент
-  if (frontmatter && frontmatter.textContent.includes('---')) {
-    frontmatter.remove();
-    console.log("Фронтматтер удалён!");
-  }
-});
-
     </script>
 </body>
 </html>
