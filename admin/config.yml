@@ -23,7 +23,7 @@ collections:
     label: "CSS Styles"
     folder: "css"
     create: true
-    format: "raw"  # Указываем, что используется чистый текст
+    format: "frontmatter"  # Используем YAML фронтматтер
     extension: "css"
     fields:
       - { name: "body", label: "CSS Content", widget: "code", default_language: "css" }
@@ -33,7 +33,7 @@ collections:
     label: "JavaScript Files"
     folder: "js"
     create: true
-    format: "raw"  # Используем чистый текст
+    format: "frontmatter"  # Используем YAML фронтматтер
     extension: "js"
     fields:
       - { name: "body", label: "JavaScript Content", widget: "code", default_language: "javascript" }
