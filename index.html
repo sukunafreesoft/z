@@ -134,5 +134,14 @@ title: Home
             document.getElementById(id).style.display = 'none';
         }
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+  const frontmatter = document.querySelectorAll('body > :first-child');
+  if (frontmatter.length > 0 && frontmatter[0].textContent.includes('---')) {
+    frontmatter[0].remove();
+  }
+});
+    </script>
 </body>
 </html>
