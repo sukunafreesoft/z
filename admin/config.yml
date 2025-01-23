@@ -1,59 +1,35 @@
 backend:
   name: github
-  repo: sukunafreesoft/z
-  branch: main
+  repo: sukunafreesoft/z # Замените на ваш репозиторий
+  branch: main # Ветка, с которой вы работаете
 
-media_folder: "img"
-public_folder: "/img"
+media_folder: "static/img" # Папка для загрузки файлов (относительно корня репозитория)
+public_folder: "/img" # URL путь для загруженных файлов
 
 collections:
-  - name: "html_pages"
-    label: "HTML Pages"
-    folder: "pages"
+  # Коллекция для HTML-страниц
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages" # Папка для хранения страниц
     create: true
-    format: "frontmatter"
+    format: "frontmatter" # Используем фронтматтер
     extension: "html"
     fields:
       - { name: "title", label: "Title", widget: "string" }
-      - { name: "body", label: "HTML Content", widget: "code", default_language: "html", default: "<p>Write your HTML here</p>" }
+      - { name: "body", label: "Content", widget: "markdown" }
 
-  - name: "styles"
-    label: "CSS Styles"
-    folder: "css"
-    create: true
-    format: "frontmatter"
-    extension: "css"
-    fields:
-      - { name: "body", label: "CSS Content", widget: "code", default_language: "css", default: "/* Add your styles here */" }
-
-  - name: "scripts"
-    label: "JavaScript Files"
-    folder: "js"
-    create: true
-    format: "frontmatter"
-    extension: "js"
-    fields:
-      - { name: "body", label: "JavaScript Content", widget: "code", default_language: "javascript", default: "// Add your JavaScript here" }
-
+  # Коллекция для изображений
   - name: "images"
     label: "Images"
-    folder: "img"
+    folder: "static/img" # Папка для хранения изображений
     create: true
     fields:
       - { name: "image", label: "Image", widget: "image" }
 
-  - name: "sounds"
-    label: "Sounds"
-    folder: "sounds"
+  # Коллекция для файлов
+  - name: "files"
+    label: "Files"
+    folder: "static/files" # Папка для хранения файлов
     create: true
     fields:
-      - { name: "file", label: "Sound File", widget: "file" }
-      - { name: "description", label: "Description", widget: "text" }
-
-  - name: "log_images"
-    label: "Log Images"
-    folder: "log-img"
-    create: true
-    fields:
-      - { name: "image", label: "Image", widget: "image" }
-      - { name: "alt", label: "Alt Text", widget: "string" }
+      - { name: "file", label: "File", widget: "file" }
