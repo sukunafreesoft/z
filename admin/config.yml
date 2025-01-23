@@ -3,14 +3,14 @@ backend:
   repo: sukunafreesoft/z # Замените на ваш репозиторий
   branch: main # Ветка, с которой вы работаете
 
-media_folder: "static/img" # Папка для загрузки файлов (относительно корня репозитория)
+media_folder: "img" # Папка для загрузки файлов (относительно корня репозитория)
 public_folder: "/img" # URL путь для загруженных файлов
 
 collections:
   # Коллекция для HTML-страниц
   - name: "pages"
     label: "Pages"
-    folder: "content/pages" # Папка для хранения страниц
+    folder: "/" # Папка для хранения страниц
     create: true
     format: "frontmatter" # Используем фронтматтер
     extension: "html"
