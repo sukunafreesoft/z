@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   repo: sukunafreesoft/z  # Укажи имя твоего репозитория на GitHub
   branch: main  # или другая ветка, если используешь её
 
