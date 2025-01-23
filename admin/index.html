@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netlify CMS</title>
-    <link href="https://cdn.jsdelivr.net/npm/netlify-cms@2.0.0/dist/netlify-cms.min.css" rel="stylesheet">
+    <!-- Подключаем последнюю версию CSS для Netlify CMS -->
+    <link href="https://unpkg.com/netlify-cms@^2.10.175/dist/netlify-cms.css" rel="stylesheet">
   </head>
   <body>
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <!-- Указываем корневой элемент для Netlify CMS -->
+    <div id="nc-root"></div>
+
+    <!-- Подключаем последнюю стабильную версию Netlify CMS -->
+    <script src="https://unpkg.com/netlify-cms@^2.10.175/dist/netlify-cms.js"></script>
   </body>
 </html>
