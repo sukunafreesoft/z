@@ -15,7 +15,7 @@ collections:
     extension: "html"
     fields:
       - { name: "title", label: "Title", widget: "string" }
-      - { name: "body", label: "HTML Content", widget: "code", default_language: "html" }
+      - { name: "body", label: "HTML Content", widget: "code", default_language: "html", default: "<p>Write your HTML here</p>" }
 
   - name: "styles"
     label: "CSS Styles"
@@ -24,7 +24,7 @@ collections:
     format: "frontmatter"
     extension: "css"
     fields:
-      - { name: "body", label: "CSS Content", widget: "code", default_language: "css" }
+      - { name: "body", label: "CSS Content", widget: "code", default_language: "css", default: "/* Add your styles here */" }
 
   - name: "scripts"
     label: "JavaScript Files"
@@ -33,7 +33,7 @@ collections:
     format: "frontmatter"
     extension: "js"
     fields:
-      - { name: "body", label: "JavaScript Content", widget: "code", default_language: "javascript" }
+      - { name: "body", label: "JavaScript Content", widget: "code", default_language: "javascript", default: "// Add your JavaScript here" }
 
   - name: "images"
     label: "Images"
