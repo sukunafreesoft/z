@@ -1,44 +1,40 @@
 backend:
   name: github
-  repo: sukunafreesoft/z  # Укажи имя твоего репозитория на GitHub
-  branch: main  # Ветка, с которой работаешь
+  repo: sukunafreesoft/z
+  branch: main
 
-media_folder: "img"  # Папка для загрузки изображений (относительно репозитория)
-public_folder: "/img"  # Путь для отображения изображений
+media_folder: "img"
+public_folder: "/img"
 
 collections:
-  # Коллекция для HTML-страниц
   - name: "html_pages"
     label: "HTML Pages"
-    folder: "pages"  # Указываем конкретную папку для HTML
+    folder: "pages"
     create: true
-    format: "frontmatter"  # Используем YAML фронтматтер
-    extension: "html"  # Расширение файлов
+    format: "frontmatter"
+    extension: "html"
     fields:
       - { name: "title", label: "Title", widget: "string" }
       - { name: "body", label: "HTML Content", widget: "code", default_language: "html" }
 
-  # Коллекция для CSS-стилей
   - name: "styles"
     label: "CSS Styles"
     folder: "css"
     create: true
-    format: "frontmatter"  # Используем YAML фронтматтер
+    format: "frontmatter"
     extension: "css"
     fields:
       - { name: "body", label: "CSS Content", widget: "code", default_language: "css" }
 
-  # Коллекция для JavaScript
   - name: "scripts"
     label: "JavaScript Files"
     folder: "js"
     create: true
-    format: "frontmatter"  # Используем YAML фронтматтер
+    format: "frontmatter"
     extension: "js"
     fields:
       - { name: "body", label: "JavaScript Content", widget: "code", default_language: "javascript" }
 
-  # Коллекция для изображений
   - name: "images"
     label: "Images"
     folder: "img"
@@ -46,7 +42,6 @@ collections:
     fields:
       - { name: "image", label: "Image", widget: "image" }
 
-  # Коллекция для звуков
   - name: "sounds"
     label: "Sounds"
     folder: "sounds"
@@ -55,7 +50,6 @@ collections:
       - { name: "file", label: "Sound File", widget: "file" }
       - { name: "description", label: "Description", widget: "text" }
 
-  # Коллекция для логотипов или дополнительных изображений
   - name: "log_images"
     label: "Log Images"
     folder: "log-img"
