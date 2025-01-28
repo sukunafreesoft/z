@@ -79,6 +79,41 @@ body {
 }
 
 /* Главный контент (Main) */
+.buy-soft {
+    transition: transform 0.3s;
+}
+
+.buy-soft:hover {
+    transform: translateY(-5px);
+}
+
+.buy-soft h3 {
+    font-size: 24px;
+    color: #ff0000;
+    margin-bottom: 5px;
+}
+
+.buy-soft p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #ccc;
+}
+
+.buy-soft .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #660000;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.buy-soft .btn:hover {
+    background-color: #ff0000;
+    transform: scale(1.1);
+}
+
 .main {
     padding: 20px;
     text-align: center;
@@ -162,20 +197,6 @@ body {
 }
 
 .download-item .btn:hover {
-    background-color: #ff0000;
-    transform: scale(1.1);
-}
-
-.privat-soft {
-    display: inline-block;
-    padding-top: 10px;
-
-    background-color: #660000;
-    border-radius: 4px;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.privat-soft:hover {
     background-color: #ff0000;
     transform: scale(1.1);
 }
