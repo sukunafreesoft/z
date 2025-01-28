@@ -166,6 +166,20 @@ body {
     transform: scale(1.1);
 }
 
+.privat-soft {
+    display: inline-block;
+    padding-top: 10px;
+
+    background-color: #660000;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.privat-soft:hover {
+    background-color: #ff0000;
+    transform: scale(1.1);
+}
+
 /* Всплывающее окно (Modal) */
 .modal {
     display: none;
