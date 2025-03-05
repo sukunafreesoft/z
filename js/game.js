@@ -111,7 +111,7 @@ function handleGameEnd(winner) {
 function minimax(board, player) {
     const winner = checkWinner();
     if (winner === 'X') return { score: -1 };
-    if (winner === 'O') return { score: 1 };
+    if (winner === 'O') return { score: 1};
     if (winner === 'draw') return { score: 0 };
 
     let moves = [];
